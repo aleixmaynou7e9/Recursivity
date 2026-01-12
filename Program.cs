@@ -28,13 +28,5 @@ class Program
         
         
     }
-    /*public static int AddDigits(int n)
-    {
-        if (n < 10) return n;
-
-        do
-        {
-
-        }while(n>9)
-    }*/
+    
 }
