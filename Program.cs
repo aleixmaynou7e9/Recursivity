@@ -4,11 +4,10 @@ class Program
 {
     public static void Main()
     {
-
-        int count;
+        int valorTotal;
         
-        count = CountDigits(233337);
-        Console.WriteLine(count);
+        valorTotal=AddDigits(123);
+        Console.WriteLine(valorTotal);
     }
     public static void Countdown(int n)
     {
@@ -28,5 +27,15 @@ class Program
         
         
     }
-    
+    public static int AddDigits(int n)
+    {
+        int ultimDigit = n % 10, valorTotal = 0;
+        if (n < 10) return n;
+         
+        
+        valorTotal = AddDigits(n/10);
+        ultimDigit = n % 10;
+        valorTotal += ultimDigit;
+        return valorTotal;
+    }
 }
