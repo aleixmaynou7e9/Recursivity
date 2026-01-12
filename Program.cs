@@ -4,7 +4,11 @@ class Program
 {
     public static void Main()
     {
-        Countdown(7);
+
+        int count;
+        
+        count = CountDigits(233337);
+        Console.WriteLine(count);
     }
     public static void Countdown(int n)
     {
@@ -13,4 +17,24 @@ class Program
         Console.WriteLine(n);
         Countdown(n - 1);
     }
+    public static int CountDigits(int n)
+    {
+        int count = 0;
+        if (n < 10) return 1 ;
+        
+        count = CountDigits(n /= 10);
+        count++;
+        return count;
+        
+        
+    }
+    /*public static int AddDigits(int n)
+    {
+        if (n < 10) return n;
+
+        do
+        {
+
+        }while(n>9)
+    }*/
 }
