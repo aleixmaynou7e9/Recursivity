@@ -4,7 +4,14 @@ class Program
 {
     public static void Main()
     {
-        Console.WriteLine(Swap(210));
+        int[] arrayInt = { 1, 2, 3, 4, 5 };
+
+        PrintForwardArray(arrayInt, 0);
+
+        Console.WriteLine();
+
+        PrintBackwardArray(arrayInt, arrayInt.Length - 1);
+
     }
     public static void Countdown(int n)
     {
@@ -47,6 +54,23 @@ class Program
         result = result * 10 + (n % 10);
 
         return SwapAux(n/10, result);
+    }
+    public static void PrintForwardArray(int[] arrayInt, int index)
+    {
+        if (index > arrayInt.Length - 1) return;
+
+        Console.Write($"{arrayInt[index]} ");
+
+        PrintForwardArray(arrayInt, index + 1);
+    }
+
+    public static void PrintBackwardArray(int[] arrayInt, int index)
+    {
+        if (index < 0) return;
+        
+        Console.Write($"{arrayInt[index]} ");
+
+        PrintBackwardArray(arrayInt, index - 1);
     }
 
 }
