@@ -4,7 +4,7 @@ class Program
 {
     public static void Main()
     {
-        Console.WriteLine(MCD(48, 18));
+        Console.WriteLine(DecimalToBinary(21));
     }
     public static void Countdown(int n)
     {
@@ -99,5 +99,10 @@ class Program
 
         return MCD(b, a % b);
     }
+    public static string DecimalToBinary(int n)
+    {
+        if (n == 0) return "";
 
+        return DecimalToBinary(n / 2) + (n % 2).ToString();
+    }
 }
