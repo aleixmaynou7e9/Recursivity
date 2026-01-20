@@ -4,14 +4,7 @@ class Program
 {
     public static void Main()
     {
-        int[] arrayInt = { 1, 2, 3, 4, 5 };
-
-        PrintForwardArray(arrayInt, 0);
-
-        Console.WriteLine();
-
-        PrintBackwardArray(arrayInt, arrayInt.Length - 1);
-
+        
     }
     public static void Countdown(int n)
     {
@@ -33,7 +26,7 @@ class Program
     }
     public static int AddDigits(int n)
     {
-        int ultimDigit = n % 10, valorTotal = 0;
+        int ultimDigit, valorTotal = 0;
         if (n < 10) return n;
         
         valorTotal = AddDigits(n/10);
@@ -71,6 +64,34 @@ class Program
         Console.Write($"{arrayInt[index]} ");
 
         PrintBackwardArray(arrayInt, index - 1);
+    }
+    public static int FinddMax(int[] arrayInt, int index)
+    {
+        if (index == arrayInt.Length - 1)
+        {
+            return arrayInt[index];
+        }
+
+        int maxim = FinddMax(arrayInt, index+1);
+
+        return Math.Max(arrayInt[index], maxim);
+
+    }
+    public static bool IsPalindrome(string word)
+    {
+        
+        if (word.Length == 0  || word.Length == 1)
+        {
+            return true;
+        }
+
+        if (word[0] != word[word.Length-1]) 
+        {
+            return false;
+        }
+
+        return IsPalindrome(word.Substring(1, word.Length - 2));
+
     }
 
 }
