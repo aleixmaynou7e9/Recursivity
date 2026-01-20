@@ -4,7 +4,7 @@ class Program
 {
     public static void Main()
     {
-        
+        Console.WriteLine(MCD(48, 18));
     }
     public static void Countdown(int n)
     {
@@ -92,6 +92,12 @@ class Program
 
         return IsPalindrome(word.Substring(1, word.Length - 2));
 
+    }
+    public static int MCD(int a, int b)
+    {
+        if (b == 0) return a;
+
+        return MCD(b, a % b);
     }
 
 }
